@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\harri\\OneDrive\\Documents\\Desktop\\My Projects\\EventPulse\\EventPulse_v1\\EventPulse_v1.csproj": {}
+    "c:\\Users\\harri\\OneDrive\\Documents\\Desktop\\My Projects\\EventPulse\\EventPulse_v1\\EventPulse_v1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\harri\\OneDrive\\Documents\\Desktop\\My Projects\\EventPulse\\EventPulse_v1\\EventPulse_v1.csproj": {
+    "c:\\Users\\harri\\OneDrive\\Documents\\Desktop\\My Projects\\EventPulse\\EventPulse_v1\\EventPulse_v1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\harri\\OneDrive\\Documents\\Desktop\\My Projects\\EventPulse\\EventPulse_v1\\EventPulse_v1.csproj",
+        "projectUniqueName": "c:\\Users\\harri\\OneDrive\\Documents\\Desktop\\My Projects\\EventPulse\\EventPulse_v1\\EventPulse_v1.csproj",
         "projectName": "EventPulse_v1",
-        "projectPath": "C:\\Users\\harri\\OneDrive\\Documents\\Desktop\\My Projects\\EventPulse\\EventPulse_v1\\EventPulse_v1.csproj",
+        "projectPath": "c:\\Users\\harri\\OneDrive\\Documents\\Desktop\\My Projects\\EventPulse\\EventPulse_v1\\EventPulse_v1.csproj",
         "packagesPath": "C:\\Users\\harri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\harri\\OneDrive\\Documents\\Desktop\\My Projects\\EventPulse\\EventPulse_v1\\obj\\",
+        "outputPath": "c:\\Users\\harri\\OneDrive\\Documents\\Desktop\\My Projects\\EventPulse\\EventPulse_v1\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
