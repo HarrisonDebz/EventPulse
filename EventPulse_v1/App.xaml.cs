@@ -1,4 +1,7 @@
-﻿namespace EventPulse_v1;
+﻿using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
+namespace EventPulse_v1;
 
 public partial class App : Application
 {
