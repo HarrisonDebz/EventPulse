@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EventPulse_v1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+c8263bd670f57e0c55d72a99b80eb7e692da92ba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+dcd61635665f57b8fa46aaa1d3d0518aebbbc25d")]
 [assembly: System.Reflection.AssemblyProductAttribute("EventPulse_v1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EventPulse_v1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
