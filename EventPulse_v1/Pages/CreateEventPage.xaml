@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EventPulse_v1.Pages.CreateEventPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:EventPulse_v1.ViewModels"
+    BackgroundColor="{StaticResource DarkBackground}">
+
+    <ContentPage.BindingContext>
+        <vm:CreateEventViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+            <Entry
+                Placeholder="Event title"
+                PlaceholderColor="{StaticResource TextSecondary}"
+                Text="{Binding Title}" />
+            <Editor
+                HeightRequest="120"
+                Placeholder="Short description"
+                Text="{Binding ShortDescription}" />
+
+            <HorizontalStackLayout Spacing="8">
+                <DatePicker Date="{Binding Date}" />
+                <TimePicker Time="{Binding Time}" />
+            </HorizontalStackLayout>
+
+            <Entry Placeholder="Location (venue)" Text="{Binding Location}" />
+            <Entry
+                Keyboard="Numeric"
+                Placeholder="Capacity (optional)"
+                Text="{Binding Capacity}" />
+
+            <Picker
+                Title="Visibility"
+                ItemsSource="{Binding VisibilityOptions}"
+                SelectedItem="{Binding SelectedVisibility}" />
+
+            <Button
+                Command="{Binding PreviewCommand}"
+                Style="{StaticResource PrimaryButton}"
+                Text="Preview" />
+            <Button
+                Command="{Binding CreateCommand}"
+                Style="{StaticResource PrimaryButton}"
+                Text="Create Event" />
+
+            <Frame IsVisible="{Binding IsPreviewVisible}" Style="{StaticResource Card}">
+                <Label Style="{StaticResource Headline}" Text="Preview" />
+                <Label Text="{Binding PreviewTitle}" />
+                <Label Text="{Binding PreviewWhen}" />
+                <Label Text="{Binding PreviewLocation}" />
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

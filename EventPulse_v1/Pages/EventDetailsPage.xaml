@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EventPulse_v1.Pages.EventDetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:EventPulse.ViewModels"
+    BackgroundColor="{StaticResource DarkBackground}">
+
+    <ContentPage.BindingContext>
+        <vm:EventDetailsViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+            <Frame Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Style="{StaticResource Headline}" Text="{Binding Event.Title}" />
+                    <Label Style="{StaticResource SmallSecondary}" Text="{Binding Event.WhenFull}" />
+                    <Label Style="{StaticResource SmallSecondary}" Text="{Binding Event.Location}" />
+                    <Label Text="{Binding Event.FullDescription}" TextColor="{StaticResource TextPrimary}" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame Style="{StaticResource Card}">
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand" Spacing="12">
+                    <Button
+                        Command="{Binding ToggleRsvpCommand}"
+                        Style="{StaticResource PrimaryButton}"
+                        Text="{Binding RsvpButtonText}" />
+                    <Button Command="{Binding ShareCommand}" Text="Share" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame Style="{StaticResource Card}">
+                <Label Style="{StaticResource Headline}" Text="Attendees" />
+                <CollectionView HeightRequest="180" ItemsSource="{Binding Event.Attendees}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <HorizontalStackLayout Padding="4" Spacing="8">
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="36"
+                                    Source="{Binding AvatarUrl}"
+                                    WidthRequest="36" />
+                                <Label
+                                    Text="{Binding Name}"
+                                    TextColor="{StaticResource TextPrimary}"
+                                    VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+
+            <Frame Style="{StaticResource Card}">
+                <Label Style="{StaticResource SmallSecondary}" Text="Venue" />
+                <!--  Map control integration placeholder  -->
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

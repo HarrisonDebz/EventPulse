@@ -3,12 +3,23 @@
     x:Class="EventPulse_v1.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:EventPulse_v1.Pages"
     xmlns:local="clr-namespace:EventPulse_v1"
+    Shell.FlyoutBehavior="Disabled"
+    BackgroundColor="{StaticResource DarkBackgroundColor}"
     Title="EventPulse_v1">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Styles/Colors.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Shell.Resources>
 
-</Shell>
+    <TabBar>
+        <ShellContent Title="Home" Icon="eventpulse_icon.png" ContentTemplate="{DataTemplate pages:MainPage}" />
+        <ShellContent Title="My Events" Icon="myevents_icon.png" ContentTemplate="{DataTemplate pages:MyEventsPage}" />
+        <ShellContent Title="Create Event" Icon="createevent_icon.png" ContentTemplate="{DataTemplate pages:CreateEventPage}" />
+        <ShellContent Title="Notifications" Icon="icon_bell.png" ContentTemplate="{DataTemplate pages:NotificationsPage}" />     
+    </TabBar>
