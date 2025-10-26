@@ -10,4 +10,30 @@
     <Color x:Key="TextPrimaryColor">#E6EEF3</Color>
     <Color x:Key="TextSecondaryColor">#A9B3BD</Color>
     <Color x:Key="SuccessColor">#3CD8C8</Color>
+
+    <!--  Sizes  -->
+    <OnPlatform x:Key="HeaderFontSize" x:TypeArguments="x:Double">
+        <On Platform="iOS, Android, WinUI" Value="20" />
+    </OnPlatform>
+
+    <!--  Headline style  -->
+    <Style x:Key="HeadlineStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource HeaderFontSize}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
+    </Style>
+
+    <!--  Primary Button  -->
+    <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
+        <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Padding" Value="10" />
+    </Style>
+
+    <!--  Secondary small text  -->
+    <Style x:Key="SecondarySmallTextStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="{StaticResource TextSecondaryColor}" />
+    </Style>
 </ResourceDictionary>
