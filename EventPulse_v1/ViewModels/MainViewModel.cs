@@ -21,8 +21,8 @@ namespace EventPulse_v1.ViewModels
             NavigateCreateCommand = new RelayCommand(_ => Shell.Current.GoToAsync("//Create"));
 
             // sample seed
-            Events.Add(new EventModel { Id="1", Title="Welcome Mixer", ShortDescription="Meet new people", WhenSummary="Fri, Oct 31 • 18:00", AttendeesCount=12 });
-            Events.Add(new EventModel { Id="2", Title="AI Workshop", ShortDescription="Intro to ML", WhenSummary="Mon, Nov 3 • 15:00", AttendeesCount=34 });
+            Events.Add(new EventModel { Id = "1", Title = "Welcome Mixer", ShortDescription = "Meet new people", AttendeesCount = 12 });
+            Events.Add(new EventModel { Id = "2", Title = "AI Workshop", ShortDescription = "Intro to ML", AttendeesCount = 34 });
         }
 
         void OpenFilters()

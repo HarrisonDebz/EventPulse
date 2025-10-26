@@ -32,24 +32,26 @@
             </Border>
 
             <Border Style="{StaticResource Card}">
-                <Label Style="{StaticResource Headline}" Text="Attendees" />
-                <CollectionView HeightRequest="180" ItemsSource="{Binding Event.Attendees}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <HorizontalStackLayout Padding="4" Spacing="8">
-                                <Image
-                                    Aspect="AspectFill"
-                                    HeightRequest="36"
-                                    Source="{Binding AvatarUrl}"
-                                    WidthRequest="36" />
-                                <Label
-                                    Text="{Binding Name}"
-                                    TextColor="{StaticResource TextPrimary}"
-                                    VerticalOptions="Center" />
-                            </HorizontalStackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                <VerticalStackLayout>
+                    <Label Style="{StaticResource Headline}" Text="Attendees" />
+                    <CollectionView HeightRequest="180" ItemsSource="{Binding Event.Attendees}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout Padding="4" Spacing="8">
+                                    <Image
+                                        Aspect="AspectFill"
+                                        HeightRequest="36"
+                                        Source="{Binding AvatarUrl}"
+                                        WidthRequest="36" />
+                                    <Label
+                                        Text="{Binding Name}"
+                                        TextColor="{StaticResource TextPrimary}"
+                                        VerticalOptions="Center" />
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
             </Border>
 
             <Border Style="{StaticResource Card}">
