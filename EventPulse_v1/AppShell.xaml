@@ -3,11 +3,11 @@
     x:Class="EventPulse_v1.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:pages="clr-namespace:EventPulse_v1.Pages"
     xmlns:local="clr-namespace:EventPulse_v1"
-    Shell.FlyoutBehavior="Disabled"
+    xmlns:pages="clr-namespace:EventPulse_v1.Pages"
+    Title="EventPulse_v1"
     BackgroundColor="{StaticResource DarkBackgroundColor}"
-    Title="EventPulse_v1">
+    Shell.FlyoutBehavior="Disabled">
 
     <Shell.Resources>
         <ResourceDictionary>
@@ -18,8 +18,21 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="Home" Icon="eventpulse_icon.png" ContentTemplate="{DataTemplate pages:MainPage}" />
-        <ShellContent Title="My Events" Icon="myevents_icon.png" ContentTemplate="{DataTemplate pages:MyEventsPage}" />
-        <ShellContent Title="Create Event" Icon="createevent_icon.png" ContentTemplate="{DataTemplate pages:CreateEventPage}" />
-        <ShellContent Title="Notifications" Icon="icon_bell.png" ContentTemplate="{DataTemplate pages:NotificationsPage}" />     
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate pages:MainPage}"
+            Icon="eventpulse_icon.png" />
+        <ShellContent
+            Title="My Events"
+            ContentTemplate="{DataTemplate pages:MyEventsPage}"
+            Icon="myevents_icon.png" />
+        <ShellContent
+            Title="Create Event"
+            ContentTemplate="{DataTemplate pages:CreateEventPage}"
+            Icon="createevent_icon.png" />
+        <ShellContent
+            Title="Notifications"
+            ContentTemplate="{DataTemplate pages:NotificationsPage}"
+            Icon="icon_bell.png" />
     </TabBar>
+</Shell>
