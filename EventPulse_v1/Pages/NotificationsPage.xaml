@@ -26,10 +26,12 @@
         <CollectionView ItemsSource="{Binding UpcomingReminders}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Style="{StaticResource Card}">
-                        <Label Text="{Binding EventTitle}" />
-                        <Label Style="{StaticResource SmallSecondary}" Text="{Binding WhenSummary}" />
-                    </Frame>
+                    <Border Style="{StaticResource Card}">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding EventTitle}" />
+                            <Label Style="{StaticResource SmallSecondary}" Text="{Binding WhenSummary}" />
+                        </VerticalStackLayout>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

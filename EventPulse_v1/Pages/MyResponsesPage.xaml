@@ -13,7 +13,7 @@
     <CollectionView ItemsSource="{Binding MyEvents}">
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Frame Style="{StaticResource Card}">
+                <Border Style="{StaticResource Card}">
                     <Grid ColumnDefinitions="*,Auto">
                         <StackLayout>
                             <Label Text="{Binding Title}" TextColor="{StaticResource TextPrimary}" />
@@ -24,7 +24,7 @@
                             CommandParameter="{Binding .}"
                             Text="Remove" />
                     </Grid>
-                </Frame>
+                </Border>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

@@ -3,7 +3,7 @@
     x:Class="EventPulse_v1.Pages.EventDetailsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:vm="clr-namespace:EventPulse.ViewModels"
+    xmlns:vm="clr-namespace:EventPulse_v1.ViewModels"
     BackgroundColor="{StaticResource DarkBackground}">
 
     <ContentPage.BindingContext>
@@ -12,16 +12,16 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="16" Spacing="12">
-            <Frame Style="{StaticResource Card}">
+            <Border Style="{StaticResource Card}">
                 <VerticalStackLayout Spacing="8">
                     <Label Style="{StaticResource Headline}" Text="{Binding Event.Title}" />
                     <Label Style="{StaticResource SmallSecondary}" Text="{Binding Event.WhenFull}" />
                     <Label Style="{StaticResource SmallSecondary}" Text="{Binding Event.Location}" />
                     <Label Text="{Binding Event.FullDescription}" TextColor="{StaticResource TextPrimary}" />
                 </VerticalStackLayout>
-            </Frame>
+            </Border>
 
-            <Frame Style="{StaticResource Card}">
+            <Border Style="{StaticResource Card}">
                 <HorizontalStackLayout HorizontalOptions="FillAndExpand" Spacing="12">
                     <Button
                         Command="{Binding ToggleRsvpCommand}"
@@ -29,9 +29,9 @@
                         Text="{Binding RsvpButtonText}" />
                     <Button Command="{Binding ShareCommand}" Text="Share" />
                 </HorizontalStackLayout>
-            </Frame>
+            </Border>
 
-            <Frame Style="{StaticResource Card}">
+            <Border Style="{StaticResource Card}">
                 <Label Style="{StaticResource Headline}" Text="Attendees" />
                 <CollectionView HeightRequest="180" ItemsSource="{Binding Event.Attendees}">
                     <CollectionView.ItemTemplate>
@@ -50,12 +50,12 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-            </Frame>
+            </Border>
 
-            <Frame Style="{StaticResource Card}">
+            <Border Style="{StaticResource Card}">
                 <Label Style="{StaticResource SmallSecondary}" Text="Venue" />
                 <!--  Map control integration placeholder  -->
-            </Frame>
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
