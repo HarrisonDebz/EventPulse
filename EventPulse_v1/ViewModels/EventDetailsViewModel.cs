@@ -5,7 +5,13 @@ namespace EventPulse_v1.ViewModels
 {
     public class EventDetailsViewModel : BaseViewModel
     {
-        public EventModel Event { get; set; } = new EventModel();
+        public EventModel Event { get; set; } = new EventModel
+        {
+            Title = string.Empty,
+            ShortDescription = string.Empty,
+            FullDescription = string.Empty,
+            Location = string.Empty
+        };
         public ICommand ToggleRsvpCommand { get; }
         public ICommand ShareCommand { get; }
 

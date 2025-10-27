@@ -4,13 +4,13 @@ using EventPulse_v1.Models;
 
 namespace EventPulse_v1.ViewModels
 {
-    public class MyRsvpsViewModel : BaseViewModel
+    public class MyResponsesViewModel : BaseViewModel
     {
         public ObservableCollection<EventModel> MyEvents { get; } = new();
 
         public ICommand UnrsvpCommand { get; }
 
-        public MyRsvpsViewModel()
+        public MyResponsesViewModel()
         {
             UnrsvpCommand = new RelayCommand(param => RemoveRsvp(param as EventModel));
             // load sample

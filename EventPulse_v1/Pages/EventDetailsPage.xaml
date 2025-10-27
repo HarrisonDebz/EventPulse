@@ -22,13 +22,21 @@
             </Border>
 
             <Border Style="{StaticResource Card}">
-                <HorizontalStackLayout HorizontalOptions="FillAndExpand" Spacing="12">
+                <Grid ColumnSpacing="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
                     <Button
+                        Grid.Column="0"
                         Command="{Binding ToggleRsvpCommand}"
                         Style="{StaticResource PrimaryButton}"
                         Text="{Binding RsvpButtonText}" />
-                    <Button Command="{Binding ShareCommand}" Text="Share" />
-                </HorizontalStackLayout>
+                    <Button
+                        Grid.Column="1"
+                        Command="{Binding ShareCommand}"
+                        Text="Share" />
+                </Grid>
             </Border>
 
             <Border Style="{StaticResource Card}">

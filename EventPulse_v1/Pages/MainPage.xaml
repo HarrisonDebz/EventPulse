@@ -30,7 +30,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <Frame Grid.Column="0" Style="{StaticResource Card}">
+            <Border Grid.Column="0" Style="{StaticResource Card}">
                 <Grid>
                     <Entry
                         BackgroundColor="Transparent"
@@ -38,7 +38,7 @@
                         PlaceholderColor="{StaticResource TextSecondary}"
                         Text="{Binding SearchQuery}" />
                 </Grid>
-            </Frame>
+            </Border>
 
             <Button
                 Grid.Column="1"
@@ -56,7 +56,7 @@
             SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Style="{StaticResource Card}">
+                    <Border Style="{StaticResource Card}">
                         <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
                             <StackLayout Grid.Column="0">
                                 <Label
@@ -89,7 +89,7 @@
                                     Text="{Binding AttendeesCount, StringFormat='{0} going'}" />
                             </StackLayout>
                         </Grid>
-                    </Frame>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

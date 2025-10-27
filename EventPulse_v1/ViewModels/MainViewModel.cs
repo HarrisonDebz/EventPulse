@@ -7,8 +7,8 @@ namespace EventPulse_v1.ViewModels
     public class MainViewModel : BaseViewModel
     {
         public ObservableCollection<EventModel> Events { get; } = new();
-        public string SearchQuery { get; set; }
-        public EventModel SelectedEvent { get; set; }
+        public string? SearchQuery { get; set; }
+        public EventModel? SelectedEvent { get; set; }
 
         public ICommand OpenFiltersCommand { get; }
         public ICommand RsvpCommand { get; }
@@ -21,8 +21,8 @@ namespace EventPulse_v1.ViewModels
             NavigateCreateCommand = new RelayCommand(_ => Shell.Current.GoToAsync("//Create"));
 
             // sample seed
-            Events.Add(new EventModel { Id = "1", Title = "Welcome Mixer", ShortDescription = "Meet new people", AttendeesCount = 12 });
-            Events.Add(new EventModel { Id = "2", Title = "AI Workshop", ShortDescription = "Intro to ML", AttendeesCount = 34 });
+            Events.Add(new EventModel { Id = "1", Title = "Welcome Mixer", ShortDescription = "Meet new people", FullDescription = "A social mixer event to welcome new members and foster connections", Location = "Main Hall", AttendeesCount = 12 });
+            Events.Add(new EventModel { Id = "2", Title = "AI Workshop", ShortDescription = "Intro to ML", FullDescription = "Introduction to Machine Learning concepts and practical applications", Location = "Conference Room A", AttendeesCount = 34 });
         }
 
         void OpenFilters()

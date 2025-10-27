@@ -6,14 +6,14 @@ namespace EventPulse_v1.ViewModels
 {
     public class CreateEventViewModel : BaseViewModel
     {
-        public string Title { get; set; }
-        public string ShortDescription { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string ShortDescription { get; set; } = string.Empty;
         public DateTime Date { get; set; } = DateTime.Today;
         public TimeSpan Time { get; set; } = TimeSpan.FromHours(18);
-        public string Location { get; set; }
-        public string Capacity { get; set; }
+        public string Location { get; set; } = string.Empty;
+        public string Capacity { get; set; } = string.Empty;
         public ObservableCollection<string> VisibilityOptions { get; } = new() { "Public", "Campus-only" };
-        public string SelectedVisibility { get; set; }
+        public string SelectedVisibility { get; set; } = "Public";
         public bool IsPreviewVisible { get; set; }
         public string PreviewTitle => Title;
         public string PreviewWhen => $"{Date.ToString("ddd, MMM d")} {Time}";

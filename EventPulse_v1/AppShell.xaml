@@ -20,19 +20,19 @@
     <TabBar>
         <ShellContent
             Title="Home"
-            ContentTemplate="{DataTemplate pages:MainPage}"
-            Icon="eventpulse_icon.png" />
+            ContentTemplate="{DataTemplate local:HomePage}"
+            Route="HomePage" />
         <ShellContent
-            Title="My Events"
-            ContentTemplate="{DataTemplate pages:MyEventsPage}"
-            Icon="myevents_icon.png" />
+            Title="My Responses"
+            ContentTemplate="{DataTemplate local:MyResponsesPage}"
+            Route="MyResponsesPage" />
         <ShellContent
             Title="Create Event"
-            ContentTemplate="{DataTemplate pages:CreateEventPage}"
-            Icon="createevent_icon.png" />
+            ContentTemplate="{DataTemplate local:CreateEventPage}"
+            Route="CreateEventPage" />
         <ShellContent
             Title="Notifications"
-            ContentTemplate="{DataTemplate pages:NotificationsPage}"
-            Icon="icon_bell.png" />
+            ContentTemplate="{DataTemplate local:NotificationsPage}"
+            Route="NotificationsPage" />
     </TabBar>
 </Shell>
