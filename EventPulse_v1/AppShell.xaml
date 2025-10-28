@@ -8,6 +8,7 @@
     BackgroundColor="{StaticResource DarkBackground}"
     Shell.FlyoutBehavior="Disabled">
 
+<<<<<<< HEAD
     <!--  ✅ Register routes for navigation  -->
     <Shell.ItemTemplate>
         <DataTemplate>
@@ -19,6 +20,16 @@
             </Grid>
         </DataTemplate>
     </Shell.ItemTemplate>
+=======
+    <Shell.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Shell.Resources>
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
 
     <TabBar>
         <ShellContent
@@ -30,7 +41,11 @@
             ContentTemplate="{DataTemplate pages:MyEventsPage}"
             Route="MyEventsPage" />
         <ShellContent
+<<<<<<< HEAD
             Title="Create"
+=======
+            Title="Create Event"
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
             ContentTemplate="{DataTemplate pages:CreateEventPage}"
             Route="CreateEventPage" />
         <ShellContent

@@ -14,6 +14,7 @@ namespace EventPulse_v1.ViewModels
         public string Capacity { get; set; } = string.Empty;
         public ObservableCollection<string> VisibilityOptions { get; } = new() { "Public", "Campus-only" };
         public string SelectedVisibility { get; set; } = "Public";
+<<<<<<< HEAD
 
         private bool _isPreviewVisible;
         public bool IsPreviewVisible
@@ -22,13 +23,29 @@ namespace EventPulse_v1.ViewModels
             set
             {
                 _isPreviewVisible = value;
+=======
+        
+        private bool _isPreviewVisible;
+        public bool IsPreviewVisible 
+        { 
+            get => _isPreviewVisible; 
+            set 
+            { 
+                _isPreviewVisible = value; 
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
                 RaisePropertyChanged();
                 RaisePropertyChanged(nameof(PreviewTitle));
                 RaisePropertyChanged(nameof(PreviewWhen));
                 RaisePropertyChanged(nameof(PreviewLocation));
+<<<<<<< HEAD
             }
         }
 
+=======
+            } 
+        }
+        
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
         public string PreviewTitle => string.IsNullOrEmpty(EventTitle) ? "Event Title" : EventTitle;
         public string PreviewWhen => $"{Date.ToString("ddd, MMM d")} at {Time:hh\\:mm}";
         public string PreviewLocation => string.IsNullOrEmpty(Location) ? "Event Location" : Location;
@@ -38,11 +55,19 @@ namespace EventPulse_v1.ViewModels
 
         public CreateEventViewModel()
         {
+<<<<<<< HEAD
             PreviewCommand = new RelayCommand(_ =>
             {
                 IsPreviewVisible = true;
             });
 
+=======
+            PreviewCommand = new RelayCommand(_ => 
+            {
+                IsPreviewVisible = true;
+            });
+            
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
             CreateCommand = new RelayCommand(_ => CreateEvent());
         }
 
@@ -54,17 +79,28 @@ namespace EventPulse_v1.ViewModels
                 // Show error
                 return;
             }
+<<<<<<< HEAD
 
             // Create event logic here
             System.Diagnostics.Debug.WriteLine($"Creating event: {EventTitle} at {Location} on {Date}");
 
+=======
+            
+            // Create event logic here
+            System.Diagnostics.Debug.WriteLine($"Creating event: {EventTitle} at {Location} on {Date}");
+            
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
             // Reset form
             EventTitle = string.Empty;
             ShortDescription = string.Empty;
             Location = string.Empty;
             Capacity = string.Empty;
             IsPreviewVisible = false;
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
             RaisePropertyChanged(nameof(EventTitle));
             RaisePropertyChanged(nameof(ShortDescription));
             RaisePropertyChanged(nameof(Location));

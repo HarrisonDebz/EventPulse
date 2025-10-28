@@ -15,11 +15,19 @@ namespace EventPulse_v1.Models
         public bool IsRSVPed { get; set; }
         public bool IsAttending { get; set; }
         public int AttendeesCount { get; set; }
+<<<<<<< HEAD
 
         // Computed properties for data binding
         public string WhenSummary => $"{Date} at {Location}";
         public string WhenFull => $"{Date} • {Location}";
 
+=======
+        
+        // Computed properties for data binding
+        public string WhenSummary => $"{Date} at {Location}";
+        public string WhenFull => $"{Date} • {Location}";
+        
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
         // Attendees collection
         public ObservableCollection<Attendee> Attendees { get; set; } = new ObservableCollection<Attendee>();
     }

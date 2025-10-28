@@ -3,7 +3,11 @@
     x:Class="EventPulse_v1.Pages.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<<<<<<< HEAD
     xmlns:vm="clr-namespace:EventPulse_v1.ViewModels"
+=======
+    xmlns:vm="clr-namespace:EventPulse_v1.ViewModels;assembly=EventPulse_v1"
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
     BackgroundColor="{StaticResource DarkBackground}">
 
     <ContentPage.BindingContext>

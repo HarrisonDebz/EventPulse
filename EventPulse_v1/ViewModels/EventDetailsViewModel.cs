@@ -6,6 +6,7 @@ namespace EventPulse_v1.ViewModels
     public class EventDetailsViewModel : BaseViewModel
     {
         private EventModel _event = new EventModel();
+<<<<<<< HEAD
         public EventModel Event
         {
             get => _event;
@@ -16,6 +17,18 @@ namespace EventPulse_v1.ViewModels
                 RaisePropertyChanged(nameof(RsvpButtonText));
                 RaisePropertyChanged(nameof(WhenFull));
             }
+=======
+        public EventModel Event 
+        { 
+            get => _event; 
+            set 
+            { 
+                _event = value; 
+                RaisePropertyChanged();
+                RaisePropertyChanged(nameof(RsvpButtonText));
+                RaisePropertyChanged(nameof(WhenFull));
+            } 
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
         }
 
         public ICommand ToggleRsvpCommand { get; }
@@ -50,13 +63,21 @@ namespace EventPulse_v1.ViewModels
         void ToggleRsvp()
         {
             if (Event == null) return;
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
             Event.IsAttending = !Event.IsAttending;
             if (Event.IsAttending)
                 Event.AttendeesCount++;
             else if (Event.AttendeesCount > 0)
                 Event.AttendeesCount--;
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
             RaisePropertyChanged(nameof(RsvpButtonText));
         }
 
