@@ -6,10 +6,6 @@
     xmlns:vm="clr-namespace:EventPulse_v1.ViewModels"
     BackgroundColor="{StaticResource DarkBackground}">
 
-    <ContentPage.BindingContext>
-        <vm:EventDetailsViewModel />
-    </ContentPage.BindingContext>
-
     <ScrollView>
         <VerticalStackLayout Padding="16" Spacing="12">
             <Border Style="{StaticResource Card}">

@@ -46,13 +46,14 @@
                 Style="{StaticResource PrimaryButton}"
                 Text="Create Event" />
 
-            <Border IsVisible="{Binding IsPreviewVisible}" Style="{StaticResource Card}" />
+            <Border IsVisible="{Binding IsPreviewVisible}" Style="{StaticResource Card}">
                 <VerticalStackLayout Spacing="4">
                     <Label Style="{StaticResource Headline}" Text="Preview" />
                     <Label Text="{Binding PreviewTitle}" />
                     <Label Text="{Binding PreviewWhen}" />
                     <Label Text="{Binding PreviewLocation}" />
                 </VerticalStackLayout>
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

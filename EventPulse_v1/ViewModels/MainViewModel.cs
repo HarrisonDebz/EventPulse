@@ -6,8 +6,8 @@ namespace EventPulse_v1.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        public ObservableCollection<EventModel> Events { get; } = new();
-        public string? SearchQuery { get; set; }
+        public string SearchQuery { get; set; } = string.Empty;
+        public ObservableCollection<EventModel> Events { get; set; }
         public EventModel? SelectedEvent { get; set; }
 
         public ICommand OpenFiltersCommand { get; }
@@ -16,26 +16,71 @@ namespace EventPulse_v1.ViewModels
 
         public MainViewModel()
         {
-            OpenFiltersCommand = new RelayCommand(_ => OpenFilters());
-            RsvpCommand = new RelayCommand(param => ToggleRsvp(param as EventModel));
-            NavigateCreateCommand = new RelayCommand(_ => Shell.Current.GoToAsync("//Create"));
+            Events = new ObservableCollection<EventModel>
+            {
+                new EventModel
+                {
+                    Title = "Tech Innovators Meetup",
+                    ShortDescription = "Explore the latest in AI and Web3 with top innovators.",
+                    Description = "Join us for an evening of networking and innovation with industry leaders in AI and Web3 technologies.",
+                    Date = "Nov 4, 2025",
+                    Location = "CBU Great Hall",
+                    ImageUrl = "https://placehold.co/600x400/222/fff?text=Tech+Meetup",
+                    IsRSVPed = false,
+                    AttendeesCount = 45,
+                    IsAttending = false
+                },
+                new EventModel
+                {
+                    Title = "Music Night",
+                    ShortDescription = "Join us for live performances from campus artists.",
+                    Description = "An evening of amazing music performances by talented students from our campus community.",
+                    Date = "Nov 10, 2025",
+                    Location = "Student Center Lawn",
+                    ImageUrl = "https://placehold.co/600x400/333/fff?text=Music+Night",
+                    IsRSVPed = true,
+                    AttendeesCount = 120,
+                    IsAttending = true
+                },
+                new EventModel
+                {
+                    Title = "Hackathon 2025",
+                    ShortDescription = "48 hours of coding, pizza, and prizes.",
+                    Description = "Annual campus hackathon with workshops, mentors, and great prizes for the best projects.",
+                    Date = "Dec 2, 2025",
+                    Location = "Innovation Hub",
+                    ImageUrl = "https://placehold.co/600x400/111/fff?text=Hackathon",
+                    IsRSVPed = false,
+                    AttendeesCount = 200,
+                    IsAttending = false
+                }
+            };
 
-            // sample seed
-            Events.Add(new EventModel { Id = "1", Title = "Welcome Mixer", ShortDescription = "Meet new people", FullDescription = "A social mixer event to welcome new members and foster connections", Location = "Main Hall", AttendeesCount = 12 });
-            Events.Add(new EventModel { Id = "2", Title = "AI Workshop", ShortDescription = "Intro to ML", FullDescription = "Introduction to Machine Learning concepts and practical applications", Location = "Conference Room A", AttendeesCount = 34 });
-        }
+            // Initialize commands
+            RsvpCommand = new RelayCommand(param =>
+            {
+                if (param is EventModel eventItem)
+                {
+                    eventItem.IsRSVPed = !eventItem.IsRSVPed;
+                    eventItem.IsAttending = eventItem.IsRSVPed;
+                    if (eventItem.IsRSVPed)
+                        eventItem.AttendeesCount++;
+                    else if (eventItem.AttendeesCount > 0)
+                        eventItem.AttendeesCount--;
+                }
+            });
 
-        void OpenFilters()
-        {
-            // show filter modal or navigate
-        }
+            NavigateCreateCommand = new RelayCommand(_ =>
+            {
+                // Navigation logic here - will be implemented later
+                System.Diagnostics.Debug.WriteLine("Navigate to Create Event");
+            });
 
-        void ToggleRsvp(EventModel? ev)
-        {
-            if (ev == null) return;
-            // optimistic UI - toggle locally; persist to backend later
-            ev.IsAttending = !ev.IsAttending;
-            ev.AttendeesCount += ev.IsAttending ? 1 : -1;
+            OpenFiltersCommand = new RelayCommand(_ =>
+            {
+                // Filter logic here - will be implemented later
+                System.Diagnostics.Debug.WriteLine("Open Filters");
+            });
         }
     }
 }

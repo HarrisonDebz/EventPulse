@@ -1,8 +1,7 @@
 using Microsoft.Maui.Controls;
-using EventPulse_v1.Models;
 using EventPulse_v1.ViewModels;
 
-namespace EventPulse_v1.Views
+namespace EventPulse_v1.Pages
 {
     public partial class EventDetailsPage : ContentPage
     {
@@ -10,11 +9,6 @@ namespace EventPulse_v1.Views
         {
             InitializeComponent();
             BindingContext = selectedEvent;
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
         }
     }
 }

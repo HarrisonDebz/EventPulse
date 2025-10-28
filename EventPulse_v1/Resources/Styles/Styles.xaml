@@ -2,38 +2,87 @@
 <?xaml-comp compile="true" ?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <!--  Colors  -->
-    <Color x:Key="DarkBackgroundColor">#0B0D0F</Color>
-    <Color x:Key="CardBackgroundColor">#0F1417</Color>
-    <Color x:Key="AccentColor">#7C4DFF</Color>
-    <Color x:Key="AccentMutedColor">#5E3CB8</Color>
-    <Color x:Key="TextPrimaryColor">#E6EEF3</Color>
-    <Color x:Key="TextSecondaryColor">#A9B3BD</Color>
-    <Color x:Key="SuccessColor">#3CD8C8</Color>
-
-    <!--  Sizes  -->
-    <OnPlatform x:Key="HeaderFontSize" x:TypeArguments="x:Double">
-        <On Platform="iOS, Android, WinUI" Value="20" />
-    </OnPlatform>
-
-    <!--  Headline style  -->
-    <Style x:Key="HeadlineStyle" TargetType="Label">
-        <Setter Property="FontSize" Value="{StaticResource HeaderFontSize}" />
+    <!--  Button Styles  -->
+    <Style x:Key="PrimaryButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+        <Setter Property="TextColor" Value="{StaticResource White}" />
+        <Setter Property="FontSize" Value="16" />
         <Setter Property="FontAttributes" Value="Bold" />
-        <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="24,12" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
     </Style>
 
-    <!--  Primary Button  -->
-    <Style x:Key="PrimaryButtonStyle" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
-        <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
-        <Setter Property="CornerRadius" Value="10" />
-        <Setter Property="Padding" Value="10" />
+    <Style x:Key="SecondaryButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="BorderColor" Value="{StaticResource PrimaryColor}" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="24,12" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
     </Style>
 
-    <!--  Secondary small text  -->
-    <Style x:Key="SecondarySmallTextStyle" TargetType="Label">
+    <!--  Label Styles  -->
+    <Style x:Key="Headline" TargetType="Label">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+
+    <Style x:Key="Subheadline" TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+
+    <Style x:Key="BodyText" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+
+    <Style x:Key="SmallSecondary" TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource TextSecondary}" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+
+    <Style x:Key="Caption" TargetType="Label">
         <Setter Property="FontSize" Value="12" />
-        <Setter Property="TextColor" Value="{StaticResource TextSecondaryColor}" />
+        <Setter Property="TextColor" Value="{StaticResource TextSecondary}" />
+        <Setter Property="HorizontalOptions" Value="Start" />
     </Style>
+
+    <!--  Card/Border Styles  -->
+    <Style x:Key="Card" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{StaticResource CardBackground}" />
+        <Setter Property="Stroke" Value="{StaticResource Gray800}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 8" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="Shadow" Value="{StaticResource ShadowMedium}" />
+    </Style>
+
+    <!--  Entry/Editor Styles  -->
+    <Style x:Key="PrimaryEntry" TargetType="Entry">
+        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Surface}" />
+        <Setter Property="PlaceholderColor" Value="{StaticResource TextSecondary}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+    </Style>
+
+    <!--  Shadow Definitions  -->
+    <Shadow x:Key="ShadowMedium">
+        <Shadow.Brush>
+            <SolidColorBrush Color="#4C000000" />
+        </Shadow.Brush>
+        <Shadow.Offset>0,4</Shadow.Offset>
+        <Shadow.Radius>8</Shadow.Radius>
+    </Shadow>
 </ResourceDictionary>

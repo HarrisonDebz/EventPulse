@@ -4,36 +4,49 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:EventPulse_v1.ViewModels"
+    x:DataType="vm:NotificationsViewModel"
     BackgroundColor="{StaticResource DarkBackground}">
 
     <ContentPage.BindingContext>
         <vm:NotificationsViewModel />
     </ContentPage.BindingContext>
 
-    <VerticalStackLayout Padding="16" Spacing="12">
-        <HorizontalStackLayout Spacing="12" VerticalOptions="Center">
-            <Label
-                Style="{StaticResource SmallSecondary}"
-                Text="Push notifications"
-                VerticalOptions="Center" />
-            <Switch IsToggled="{Binding PushEnabled}" />
-        </HorizontalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+            <HorizontalStackLayout Spacing="12" VerticalOptions="Center">
+                <Label
+                    Style="{StaticResource SmallSecondary}"
+                    Text="Push notifications"
+                    VerticalOptions="Center" />
+                <Switch IsToggled="{Binding PushEnabled, Mode=TwoWay}" />
+            </HorizontalStackLayout>
 
-        <Label Style="{StaticResource SmallSecondary}" Text="Reminder lead time" />
-        <Picker ItemsSource="{Binding LeadTimeOptions}" SelectedItem="{Binding SelectedLeadTime}" />
+            <Label Style="{StaticResource SmallSecondary}" Text="Reminder lead time" />
+            <Picker
+                Title="Select lead time"
+                ItemsSource="{Binding LeadTimeOptions}"
+                SelectedItem="{Binding SelectedLeadTime, Mode=TwoWay}" />
 
-        <Label Style="{StaticResource Headline}" Text="Upcoming reminders" />
-        <CollectionView ItemsSource="{Binding UpcomingReminders}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Border Style="{StaticResource Card}">
-                        <VerticalStackLayout>
-                            <Label Text="{Binding EventTitle}" />
-                            <Label Style="{StaticResource SmallSecondary}" Text="{Binding WhenSummary}" />
-                        </VerticalStackLayout>
-                    </Border>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </VerticalStackLayout>
+            <Label Style="{StaticResource Headline}" Text="Upcoming reminders" />
+            <CollectionView ItemsSource="{Binding UpcomingReminders}">
+                <CollectionView.EmptyView>
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource SmallSecondary}"
+                        Text="No upcoming reminders" />
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="0,4" Style="{StaticResource Card}">
+                            <VerticalStackLayout Padding="12" Spacing="4">
+                                <Label FontAttributes="Bold" Text="{Binding EventTitle}" />
+                                <Label Style="{StaticResource SmallSecondary}" Text="{Binding WhenSummary}" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

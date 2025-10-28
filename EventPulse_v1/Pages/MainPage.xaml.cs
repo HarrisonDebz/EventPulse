@@ -1,27 +1,14 @@
 using Microsoft.Maui.Controls;
 using EventPulse_v1.ViewModels;
 
-namespace EventPulse_v1.Views
+namespace EventPulse_v1.Pages
 {
-    public partial class HomePage : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public HomePage()
+        public MainPage()
         {
             InitializeComponent();
-            BindingContext = new HomeViewModel();
-        }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
         }
-    }
-}
-
-namespace EventPulse_v1.ViewModels
-{
-    // Minimal ViewModel so the project compiles; expand with properties/commands as needed.
-    public class HomeViewModel
-    {
     }
 }
