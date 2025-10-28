@@ -5,34 +5,65 @@ namespace EventPulse_v1.ViewModels
 {
     public class EventDetailsViewModel : BaseViewModel
     {
-        public EventModel Event { get; set; } = new EventModel
-        {
-            Title = string.Empty,
-            ShortDescription = string.Empty,
-            FullDescription = string.Empty,
-            Location = string.Empty
-        };
+        private EventModel _event = new EventModel();
+        public EventModel Event 
+        { 
+            get => _event; 
+            set 
+            { 
+                _event = value; 
+                RaisePropertyChanged();
+                RaisePropertyChanged(nameof(RsvpButtonText));
+                RaisePropertyChanged(nameof(WhenFull));
+            } 
+        }
+
         public ICommand ToggleRsvpCommand { get; }
         public ICommand ShareCommand { get; }
 
-        public string RsvpButtonText => Event.IsAttending ? "Un-RSVP" : "RSVP";
+        public string RsvpButtonText => Event?.IsAttending == true ? "Un-RSVP" : "RSVP";
+        public string WhenFull => Event != null ? $"{Event.Date} • {Event.Location}" : string.Empty;
 
         public EventDetailsViewModel()
         {
+            // Initialize with a sample event
+            Event = new EventModel
+            {
+                Title = "Sample Event",
+                ShortDescription = "This is a sample event description",
+                FullDescription = "This is the full description of the sample event with all the details you need to know about this amazing event.",
+                Date = "Nov 15, 2025",
+                Location = "Sample Location",
+                IsAttending = false,
+                AttendeesCount = 25
+            };
+
+            // Add sample attendees
+            Event.Attendees.Add(new Attendee { Name = "John Doe", AvatarUrl = "https://placehold.co/40x40/666/fff?text=JD" });
+            Event.Attendees.Add(new Attendee { Name = "Jane Smith", AvatarUrl = "https://placehold.co/40x40/666/fff?text=JS" });
+            Event.Attendees.Add(new Attendee { Name = "Mike Johnson", AvatarUrl = "https://placehold.co/40x40/666/fff?text=MJ" });
+
             ToggleRsvpCommand = new RelayCommand(_ => ToggleRsvp());
             ShareCommand = new RelayCommand(_ => Share());
         }
 
         void ToggleRsvp()
         {
+            if (Event == null) return;
+            
             Event.IsAttending = !Event.IsAttending;
-            // update backend
+            if (Event.IsAttending)
+                Event.AttendeesCount++;
+            else if (Event.AttendeesCount > 0)
+                Event.AttendeesCount--;
+                
             RaisePropertyChanged(nameof(RsvpButtonText));
         }
 
         void Share()
         {
             // integrate share
+            System.Diagnostics.Debug.WriteLine($"Sharing event: {Event.Title}");
         }
     }
 }

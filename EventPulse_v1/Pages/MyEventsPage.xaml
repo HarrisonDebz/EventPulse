@@ -7,21 +7,26 @@
     BackgroundColor="{StaticResource DarkBackground}">
 
     <ContentPage.BindingContext>
-        <vm:MyResponsesViewModel />
+        <vm:MyEventsViewModel />
     </ContentPage.BindingContext>
 
     <CollectionView ItemsSource="{Binding MyEvents}">
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <Border Style="{StaticResource Card}">
-                    <Grid ColumnDefinitions="*,Auto">
-                        <StackLayout>
-                            <Label Text="{Binding Title}" TextColor="{StaticResource TextPrimary}" />
+                    <Grid Padding="12" ColumnDefinitions="*,Auto">
+                        <StackLayout Grid.Column="0">
+                            <Label
+                                FontAttributes="Bold"
+                                Text="{Binding Title}"
+                                TextColor="{StaticResource TextPrimary}" />
                             <Label Style="{StaticResource SmallSecondary}" Text="{Binding WhenSummary}" />
                         </StackLayout>
                         <Button
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MyRsvpsViewModel}}, Path=UnrsvpCommand}"
+                            Grid.Column="1"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.UnrsvpCommand}"
                             CommandParameter="{Binding .}"
+                            Style="{StaticResource SecondaryButton}"
                             Text="Remove" />
                     </Grid>
                 </Border>

@@ -3,16 +3,16 @@
     x:Class="EventPulse_v1.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:EventPulse_v1"
     xmlns:pages="clr-namespace:EventPulse_v1.Pages"
-    Title="EventPulse_v1"
-    BackgroundColor="{StaticResource DarkBackgroundColor}"
+    Title="EventPulse"
+    BackgroundColor="{StaticResource DarkBackground}"
     Shell.FlyoutBehavior="Disabled">
 
     <Shell.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Shell.Resources>
@@ -20,19 +20,19 @@
     <TabBar>
         <ShellContent
             Title="Home"
-            ContentTemplate="{DataTemplate local:HomePage}"
-            Route="HomePage" />
+            ContentTemplate="{DataTemplate pages:MainPage}"
+            Route="MainPage" />
         <ShellContent
-            Title="My Responses"
-            ContentTemplate="{DataTemplate local:MyResponsesPage}"
-            Route="MyResponsesPage" />
+            Title="My Events"
+            ContentTemplate="{DataTemplate pages:MyEventsPage}"
+            Route="MyEventsPage" />
         <ShellContent
             Title="Create Event"
-            ContentTemplate="{DataTemplate local:CreateEventPage}"
+            ContentTemplate="{DataTemplate pages:CreateEventPage}"
             Route="CreateEventPage" />
         <ShellContent
             Title="Notifications"
-            ContentTemplate="{DataTemplate local:NotificationsPage}"
+            ContentTemplate="{DataTemplate pages:NotificationsPage}"
             Route="NotificationsPage" />
     </TabBar>
 </Shell>

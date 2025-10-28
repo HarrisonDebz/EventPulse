@@ -11,5 +11,8 @@ namespace EventPulse_v1.ViewModels
 
         bool isBusy;
         public bool IsBusy { get => isBusy; set { isBusy = value; RaisePropertyChanged(); } }
+
+        string title = string.Empty;
+        public string Title { get => title; set { title = value; RaisePropertyChanged(); } }
     }
 }

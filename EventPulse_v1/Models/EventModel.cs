@@ -1,23 +1,32 @@
-// EventModel.cs
-using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace EventPulse_v1.Models
 {
     public class EventModel
     {
-        public string Id { get; set; } = Guid.NewGuid().ToString();
-        public required string Title { get; set; }
-        public required string ShortDescription { get; set; }
-        public required string FullDescription { get; set; }
-        public DateTime Start { get; set; }
-        public DateTime End { get; set; }
-        public required string Location { get; set; }
-        public int AttendeesCount { get; set; }
+        public string Id { get; set; } = string.Empty;
+        public string Title { get; set; } = string.Empty;
+        public string ShortDescription { get; set; } = string.Empty;
+        public string FullDescription { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Date { get; set; } = string.Empty;
+        public string Location { get; set; } = string.Empty;
+        public string ImageUrl { get; set; } = string.Empty;
+        public bool IsRSVPed { get; set; }
         public bool IsAttending { get; set; }
-        public List<UserModel> Attendees { get; set; } = [];
-        // Convenience for UI
-        public string WhenSummary => Start == default ? "" : $"{Start:ddd, MMM d} • {Start:HH:mm}";
-        public string WhenFull => Start == default ? "" : $"{Start:dddd, MMM d yyyy} at {Start:HH:mm}";
+        public int AttendeesCount { get; set; }
+        
+        // Computed properties for data binding
+        public string WhenSummary => $"{Date} at {Location}";
+        public string WhenFull => $"{Date} • {Location}";
+        
+        // Attendees collection
+        public ObservableCollection<Attendee> Attendees { get; set; } = new ObservableCollection<Attendee>();
+    }
+
+    public class Attendee
+    {
+        public string Name { get; set; } = string.Empty;
+        public string AvatarUrl { get; set; } = string.Empty;
     }
 }
