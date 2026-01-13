@@ -4,5 +4,5 @@
 - 🔔 **Notifications** – Get notified before events start or when changes happen.  
 - 🧠 **Club Profiles** – Let organizations manage their own page and event history.  
 - 📸 **Media Tools** – Streamline event coverage and publicity tasks.  
-- 🌐 **Cross platform** – Works across web and mobile.
+- 🌐 **Cross platform** – Works across Android and mobile.
 - 
