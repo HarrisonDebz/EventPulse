@@ -1,4 +1,4 @@
-## 🚀 Features
+## 🚀 App Features
 - 🗓 **Event Listings** – Student clubs and societies can post upcoming events with details, posters, and links.  
 - 🙋 **RSVP System** – Students can confirm attendance and get reminders automatically.  
 - 🔔 **Smart Notifications** – Get notified before events start or when changes happen.  
