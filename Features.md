@@ -3,6 +3,6 @@
 - 🙋 **Response System** – Students can confirm attendance and get reminders automatically.  
 - 🔔 **Notifications** – Get notified before events start or when changes happen.  
 - 🧠 **Club Profiles** – Let organizations manage their own page and event history.  
-- 📸 **Media Team Tools** – Streamline event coverage and publicity tasks.  
+- 📸 **Media Tools** – Streamline event coverage and publicity tasks.  
 - 🌐 **Accessible Anywhere** – Works across web and mobile.
 - 
