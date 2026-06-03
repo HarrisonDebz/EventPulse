@@ -5,15 +5,10 @@ namespace EventPulse_v1.Pages
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        public MainPage(MainViewModel vm)
         {
             InitializeComponent();
-
+            BindingContext = vm;
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> e15dbea63a55850cd555d255db5fcd9cb6ed9f2f
